@@ -1,10 +1,10 @@
 Config = Config or {}
 
-Config.OneStore = true -- Set to true if using just the main Vangelico's Jewellers
+Config.OneStore = false -- Set to true if using just the main Vangelico's Jewellers
 Config.Cooldown = 5 * (60 * 2000) -- where x is minutes ie. x * (60 * 2000) \\ For door auto lock function
 Config.Timeout = 5 * (60 * 2000) -- where x is minutes ie. x * (60 * 2000) \\ For case smashing cooldown
 Config.AutoLock = true -- Set to false if you don't want the doors to auto lock/lock at all
-Config.RequiredCops = 0
+Config.RequiredCops = 3
 
 Config.VangelicoHours = { -- Store Hours
   range = { -- Set both to 0 if you want the store to be robbed 24/7
@@ -119,51 +119,246 @@ Config.ThermiteSettings = {
   incorrectBlocks = 10 -- incorrectBlocks = number of incorrect blocks after which the game will fail
 }
 
-Config.HackItem = 'phone' -- item to remove\check for when hacking
+Config.HackItem = 'trojan_usb' -- item to remove\check for when hacking
 Config.VarHackSettings = {
   blocks = 2, -- time the hack displays for \\ half being showing the puzzle and the other solving
   time = 20 -- time the hack displays for
 }
 
 Config.WhitelistedWeapons = {
-  [`weapon_assaultrifle`] = {
-    timeOut = 5000
-  },
-  [`weapon_carbinerifle`] = {
-    timeOut = 5000
-  },
-  [`weapon_pumpshotgun`] = {
-    timeOut = 5000
-  },
-  [`weapon_sawnoffshotgun`] = {
-    timeOut = 5000
-  },
-  [`weapon_compactrifle`] = {
-    timeOut = 5000
-  },
-  [`weapon_autoshotgun`] = {
-    timeOut = 5000
-  },
-  [`weapon_crowbar`] = {
-    timeOut = 5000
-  },
   [`weapon_pistol`] = {
-    timeOut = 5000
+      ["timeOut"] = 5000
   },
   [`weapon_pistol_mk2`] = {
-    timeOut = 5000
+      ["timeOut"] = 5000
   },
   [`weapon_combatpistol`] = {
-    timeOut = 5000
+      ["timeOut"] = 5000
+  },
+  [`weapon_pistol`] = {
+      ["timeOut"] = 5000
   },
   [`weapon_appistol`] = {
-    timeOut = 5000
+      ["timeOut"] = 5000
+  },
+  [`weapon_stungun`] = {
+      ["timeOut"] = 5000
   },
   [`weapon_pistol50`] = {
-    timeOut = 5000
-  }, 
+      ["timeOut"] = 5000
+  },
+  [`weapon_snspistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_snspistol_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_pistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_heavypistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_vintagepistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_flaregun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_marksmanpistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_revolver`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_revolver_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_doubleaction`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_raypistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_ceramicpistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_navyrevolver`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_gadgetpistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_stungun_mp`] = {
+      ["timeOut"] = 5000
+  },
   [`weapon_microsmg`] = {
-    timeOut = 5000
+      ["timeOut"] = 5000
+  },
+  [`weapon_smg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_smg_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_assaultsmg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_combatpdw`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_machinepistol`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_minismg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_raycarbine`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_pumpshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_pumpshotgun_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_sawnoffshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_assaultshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_bullpupshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_musket`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_heavyshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_dbshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_autoshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_combatshotgun`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_assaultrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_assaultrifle_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_carbinerifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_carbinerifle_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_advancedrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_specialcarbine`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_specialcarbine_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_bullpuprifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_bullpuprifle_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_compactrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_militaryrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_heavyrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_combatmg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_combatmg_mk2`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_gusenberg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_ak47`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_m70`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_de`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_fnx45`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_m9`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_uzi`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mac10`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mossberg`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_huntingrifle`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mp9`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_m110`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_hk416`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_ak74`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_aks74`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_glock22`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_glock18c`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mp5`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_m4`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_ar15`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_remington`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_scarh`] = {
+      ["timeOut"] = 5000
+  },
+  [`weapon_mk14`] = {
+      ["timeOut"] = 5000
   },
 }
 
@@ -172,23 +367,30 @@ Config.VitrineRewards = {
     item = 'rolex',
     ['Amounts'] = {
       min = 1,
-      max = 4
+      max = 3
     }
   },
   [2] = {
     item = 'diamond_ring',
     ['Amounts'] = {
       min = 1,
-      max = 4
+      max = 3
     }
   },
   [3] = {
     item = 'goldchain',
     ['Amounts'] = {
       min = 1,
-      max = 4
+      max = 3
     }
-  }
+  },
+  [4] = {
+    item = '10kgoldchain',
+    ['Amounts'] = {
+      min = 2,
+      max = 6
+    }
+  },
 }
 
 Config.Skills = {
